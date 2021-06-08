@@ -13,6 +13,7 @@ class Events extends Model
     protected $fillable = [
         'title',
         'club',
+        'bloodDonation',
         'date',
         'time',
         'image',

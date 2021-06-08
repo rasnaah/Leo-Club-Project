@@ -46,6 +46,7 @@ class EventsController extends Controller
         $validator = Validator::make($input, [
             'title' => 'required|string',
             'club' => 'required|string',
+//            'bloodDonation' => ['required|boolean'],
             'date' => 'required|date',
             //'time' => 'required|time',
             'image' => 'required|mimes:jpeg,jpg,png,gig',
@@ -87,6 +88,7 @@ class EventsController extends Controller
 
             $event->title = $request->title;
             $event->club = $request->club;
+            $event->bloodDonation = $request->has('bloodDonation');
             $event->date = $request->date;
             $event->time = $request->time;
             $event->image = $filePath;
@@ -152,6 +154,7 @@ class EventsController extends Controller
         $validator = Validator::make($input, [
             'title' => 'required|string',
             'club' => 'required|string',
+            //'bloodDonation' => ['required'],
             'date' => 'required|date',
             'time' => 'required|time',
             'description' => 'required|string'
