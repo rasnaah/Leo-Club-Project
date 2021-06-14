@@ -22,7 +22,7 @@ class CreateEventsTable extends Migration
             $table->date('date');
             $table->time('time')->toString();
             $table->string('image');
-            $table->text('description');
+            $table->string('description');
             /*$table->rememberToken();*/
             $table->timestamps();
         });

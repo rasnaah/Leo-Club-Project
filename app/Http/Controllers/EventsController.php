@@ -72,6 +72,11 @@ class EventsController extends Controller
                 }*/
         $event = new Events();
 
+        if($request->has(0)){
+            return 'No';
+        }else{
+            return 'Yes';
+        };
         // Check if an image has been uploaded
         if ($request->has('image')) {
             // Get image file
@@ -118,6 +123,7 @@ class EventsController extends Controller
             "ok" => true,
             "data" => $event,
         ]);
+
     }
 
     public function deleteImage($id){
